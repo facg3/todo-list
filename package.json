@@ -4,7 +4,7 @@
   "description": "Simple todo list that adds, deletes, marks as read, modifies and maybe sorts notes.",
   "main": "dom.js",
   "scripts": {
-    "test": "tape ./*.test.js | tap-spec"
+    "test": "tape ./tests/*.js | tap-spec"
   },
   "repository": {
     "type": "git",

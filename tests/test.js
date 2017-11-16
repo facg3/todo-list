@@ -1,5 +1,5 @@
 const test = require('tape');
-const todo = require('./logic.js');
+const todo = require('../logic.js');
 
 
 const list = [
