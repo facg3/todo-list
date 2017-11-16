@@ -15,12 +15,12 @@
   // This function takes a todo, it returns the DOM node representing that todo
   var createTodoNode = function(todo) {
     var todoNode = document.createElement('li');
-    todoNode.className = "listitem";
+    todoNode.id = todo.id;
     // you will need to use addEventListener
     // add span holding description
-    var span = document.createElement('span');
-    span.innerHTML = todo.description;
-    todoNode.appendChild(span)
+
+    todoNode.innerHTML = todo.description;
+
     // this adds the delete button
     var deleteButtonNode = document.createElement('button');
     deleteButtonNode.innerHTML = "X";
@@ -30,13 +30,26 @@
       update(newState);
     });
     todoNode.appendChild(deleteButtonNode);
-    return todoNode;
+
     // add markTodo button
-    var markButtonNode = document.createElement('checkbox');
+    var markButtonNode = document.createElement('button');
+    markButtonNode.innerHTML = "Check";
+    markButtonNode.id = todo.id;
     markButtonNode.addEventListener('click', function(event) {
+
       var newState2 = todoFunctions.markTodo(state, todo.id);
+
       update(newState2);
+      if(todo.done){
+        document.getElementById(todo.id).className = "checked";
+      }
+      else{
+        document.getElementById(todo.id).className = "";
+      }
+
     });
+    todoNode.appendChild(markButtonNode);
+    return todoNode;
     // add classes for css
 
 
@@ -53,6 +66,7 @@
 
       // hint: todoFunctions.addTodo
       var newState = todoFunctions.addTodo(state, {description:description}); // ?? change this!
+      document.getElementsByName('description')[0].value = "";
       update(newState);
     });
   }
