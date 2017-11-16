@@ -1,3 +1,132 @@
-* {
+body {
+
+  background: #E0EAFC;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #CFDEF3, #E0EAFC);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #CFDEF3, #E0EAFC); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  margin-top: 100px;
+  margin-right: 100px;
+  margin-bottom: 100px;
+  margin-left: 100px;
+  height: 637px;
+  width: 930px;
+  border-top-width: 10px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 5px;
+  border-left-width: 10px;
+  border-right-width: 10px;
+  border-bottom-width: 10px;
 
 }
+
+
+#h1{
+font-family: "Times New Roman", Times, serif;
+background: #4CA1AF;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #C4E0E5, #4CA1AF);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #C4E0E5, #4CA1AF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+text-align:center;
+align-self: center;
+color: black;
+margin-right:0px;
+margin-left: 0px;
+height:70px;
+width: 930px;
+margin-top: 20px;
+padding-top: 10px;
+padding-bottom: 10px;
+margin-bottom: 20px;
+
+}
+#todo-container{
+  margin-right: 50px;
+  margin-left: 50px;
+  margin-top: 50px;
+  border-bottom-width: 50px;
+  height: 150px;
+  width: 800px;;
+}
+.text{
+  border: 2px solid #ef629f;
+  border-radius: 25px;
+  background-color:white;
+  color:  black;
+  height: 65px;
+  width: 800px;
+  text-align: center;
+  margin-top: 20px;
+  margin-left: 10px;
+  margin-right: 5px;
+  display: inline-block;
+
+}
+.add-btn{
+  background: #4CA1AF;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #C4E0E5, #4CA1AF);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #C4E0E5, #4CA1AF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  border: none;
+  color:black;
+  height: auto;
+  width: auto;
+  margin-right: 10px;
+  margin-left: 0px;
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-bottom: 25px;
+  padding-top: 25px;
+  cursor: pointer;
+  border: 2px solid #ef629f;
+  border-radius: 25%;
+  min-height: 100%
+
+}
+.remove{
+  background-color: background: #EECDA3;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #EF629F, #EECDA3);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #EF629F, #EECDA3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  border: none;
+  color:red;
+  height: auto;
+  width: auto;
+  margin :3px;
+}
+.sec{
+  padding-top: 0px;
+  height: 500px;
+  background-color:#ffffff;
+  align-self: auto;
+}
+.ul1{
+   background:#2C3E50;
+}
+.listitem{
+   background: white;
+}
+@media only screen and (max-width: 1120px) {/* include a block of CSS properties only if a certain condition is true.*/
+#h1{
+    width: 100%;
+}
+@media only screen and (max-width: 1120px) {/* include a block of CSS properties only if a certain condition is true.*/
+    .sec{
+        width: 100%;
+      }
+        @media only screen and (max-width: 1120px) {/* include a block of CSS properties only if a certain condition is true.*/
+            .text{
+                width: 50%;
+              }
+              @media only screen and (max-width: 1120px) {/* include a block of CSS properties only if a certain condition is true.*/
+                  body{
+                      width: 50%;
+                    }
+                    @media only screen and (max-width: 1120px) {/* include a block of CSS properties only if a certain condition is true.*/
+                        .add-btn{
+                            width: 10%;
+                          }
+                          @media only screen and (max-width: 1120px) {/* include a block of CSS properties only if a certain condition is true.*/
+                              .todo-container{
+                                  width: 10%;
+                                }

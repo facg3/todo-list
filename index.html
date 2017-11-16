@@ -1,25 +1,25 @@
-<html lang='en'>
-    <head>
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <script src="script.js"></script>
-    </head>
-
-    <body>
-        <div class="interface">
-            <h1>TODO List</h1>
-
-            <input type="text" class="intext">
-            <button class="add-btn">+</button>
-            <button class="clear-btn">Clear</button>
-<!--
-            <select>
-                <option>By name</option>
-                <option>By priority</option>
-            </select>
--->
-            <ul class="task-list">
-
-            </ul>
-        </div>
-    </body>
+<!DOCTYPE html>
+<html dir="ltr" lang= "uk" >
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>tdd todo</title>
+    <link rel="stylesheet" href="./style.css">
+  </head>
+  <body>
+    <section class = "sec">
+    <div id ="h1">
+    <h1 >To Do List!</h1></div>
+    <form id="add-todo">
+      <input type="text" class="text" name="description" value="" placeholder="Write Your Task...">
+      <input type="submit" class="add-btn" name="+" value="+">
+    </form>
+    <div id = "todo-container">
+        <ul class="ul1">
+        </ul>
+    </div>
+  </section>
+  </body>
+  <script type="text/javascript" src = "./logic.js"></script>
+  <script type="text/javascript" src = "./dom.js"></script>
 </html>
