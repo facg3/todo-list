@@ -16,4 +16,4 @@ Because we can.
 Teamwork. Progress was accelerating starting from 0 in the functinos, since we had no idea about the pre-made code, the functionality of it was ambiguous for the entire process of going through logic.js. But eventually.. Whorray!
 
 ## Plan
-Mohammad and Marwa had created the addTodo, deleteTodo functions while I -Noureldean- worked on the markTodo function. On the next day Marwa had worked worked on the CSS while Mohammad and I had completed working on the remining of the functions and the DOM.js, each had worked his share on the TDD. 
+Mohammad and Marwa had created the addTodo, deleteTodo functions while I -Noureldean- worked on the markTodo function. On the next day Marwa had worked on the CSS while Mohammad and I had completed working on the remaining of the functions and the DOM.js, each had worked his share on the TDD. 
