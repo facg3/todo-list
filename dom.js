@@ -15,23 +15,31 @@
   // This function takes a todo, it returns the DOM node representing that todo
   var createTodoNode = function(todo) {
     var todoNode = document.createElement('li');
+    todoNode.className = "listitem";
     // you will need to use addEventListener
-
     // add span holding description
-
+    var span = document.createElement('span');
+    span.innerHTML = todo.description;
+    todoNode.appendChild(span)
     // this adds the delete button
     var deleteButtonNode = document.createElement('button');
+    deleteButtonNode.innerHTML = "X";
+    deleteButtonNode.className = "remove";
     deleteButtonNode.addEventListener('click', function(event) {
       var newState = todoFunctions.deleteTodo(state, todo.id);
       update(newState);
     });
     todoNode.appendChild(deleteButtonNode);
-
+    return todoNode;
     // add markTodo button
-
+    var markButtonNode = document.createElement('checkbox');
+    markButtonNode.addEventListener('click', function(event) {
+      var newState2 = todoFunctions.markTodo(state, todo.id);
+      update(newState2);
+    });
     // add classes for css
 
-    return todoNode;
+
   };
 
   // bind create todo form
@@ -40,11 +48,11 @@
       // https://developer.mozilla.org/en-US/docs/Web/Events/submit
       // what does event.preventDefault do?
       // what is inside event.target?
-
-      var description = '?'; // event.target ....
+      event.preventDefault();
+      var description = document.getElementsByName("description")[0].value; // event.target ....
 
       // hint: todoFunctions.addTodo
-      var newState = []; // ?? change this!
+      var newState = todoFunctions.addTodo(state, {description:description}); // ?? change this!
       update(newState);
     });
   }
@@ -68,4 +76,4 @@
   };
 
   if (container) renderState(state);
-})();domdddd
+})();
