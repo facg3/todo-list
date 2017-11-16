@@ -37,7 +37,9 @@ var todoFunctions = {
     arr.push(obj);
 
     return arr;
-  }},
+  }
+else{return todos;}
+},
   deleteTodo: function(todos, idToDelete) {
     // should leave the input argumennt todos unchanged (you can use cloneArrayOfObjects)
     // return a new array, this should not contain any todo with an id of idToDelete
