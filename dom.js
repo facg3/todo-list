@@ -7,20 +7,28 @@
   var addTodoForm = document.getElementById('add-todo');
 
   var state = [
-    { id: -3, description: 'first todo' },
-    { id: -2, description: 'second todo' },
-    { id: -1, description: 'third todo' },
+    { id: -3, description: 'first todo' , done: false},
+    { id: -2, description: 'second todo', done: false },
+    { id: -1, description: 'third todo', done: false },
   ]; // this is our initial todoList
 
   // This function takes a todo, it returns the DOM node representing that todo
   var createTodoNode = function(todo) {
     var todoNode = document.createElement('li');
-    todoNode.className = "listitem";
+    // todoNode.id = todo.id;
     // you will need to use addEventListener
     // add span holding description
-    var span = document.createElement('span');
-    span.innerHTML = todo.description;
-    todoNode.appendChild(span)
+    var span = document.createElement("SPAN");
+    if (todo.done) {
+      span.classList.add('checked');
+
+    }
+    var description= document.createTextNode(todo.description);
+    span.appendChild(description);
+    todoNode.appendChild(span);
+
+    //  todoNode.innerHTML = todo.description;
+
     // this adds the delete button
     var deleteButtonNode = document.createElement('button');
     deleteButtonNode.innerHTML = "X";
@@ -30,13 +38,27 @@
       update(newState);
     });
     todoNode.appendChild(deleteButtonNode);
-    return todoNode;
+
     // add markTodo button
-    var markButtonNode = document.createElement('checkbox');
+    var markButtonNode = document.createElement('button');
+    markButtonNode.innerHTML = "Check";
+    markButtonNode.className = "checkb";
+    markButtonNode.id = todo.id;
     markButtonNode.addEventListener('click', function(event) {
-      var newState2 = todoFunctions.markTodo(state, todo.id);
-      update(newState2);
+      var newState = todoFunctions.markTodo(state, todo.id);
+      update(newState);
+        //
+        // if(!newState.done){
+        //   console.log("Entered the if");
+        //   document.getElementById(todo.id).classList.add('checked');
+        // }
+        // else{
+        //   console.log("Entered the else");
+        //   document.getElementById(todo.id).classList.remove('checked');
+        // }
     });
+    todoNode.appendChild(markButtonNode);
+    return todoNode;
     // add classes for css
 
 
@@ -49,10 +71,11 @@
       // what does event.preventDefault do?
       // what is inside event.target?
       event.preventDefault();
-      var description = document.getElementsByName("description")[0].value; // event.target ....
+      var descr = document.getElementsByName("description")[0].value; // event.target ....
 
       // hint: todoFunctions.addTodo
-      var newState = todoFunctions.addTodo(state, {description:description}); // ?? change this!
+      var newState = todoFunctions.addTodo(state, descr); // ?? change this!
+      document.getElementsByName('description')[0].value = "";
       update(newState);
     });
   }

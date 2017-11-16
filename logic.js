@@ -31,33 +31,38 @@ var todoFunctions = {
     // hint: array.concat
     var arr = JSON.parse(JSON.stringify(todos));
     var obj = {id : todoFunctions.generateId(),
-               description: newTodo.description,
+               description: newTodo,
                done: false}
     arr.push(obj);
-    document.getElementsByName('description')[0].value = "";
+
     return arr;
   },
   deleteTodo: function(todos, idToDelete) {
     // should leave the input argumennt todos unchanged (you can use cloneArrayOfObjects)
     // return a new array, this should not contain any todo with an id of idToDelete
     // hint: array.filter
-    JSON.parse(JSON.stringify(todos));
-    for (var i in arr2){
-      if (arr2[i].id == idToDelete){
-        delete arr2[i];
-      }
-    }
+    var arr2 = JSON.parse(JSON.stringify(todos));
+    arr2 = arr2.filter(function(x){
+      return x.id != idToDelete;
+    });
+
     return arr2;
   },
   markTodo: function(todos, idToMark) {
-      var newtodos = JSON.parse(JSON.stringify(todos));
-      for(var i=0; i<newtodos.length; i++) {
-          if(newtodos[i].id == idToMark) {
-              newtodos[i].done = !newtodos[i].done;
-              
-      }
-      }
-      return newtodos;
+      return todos.map(function(idToDone){
+        if(idToDone.id === idToMark){
+            if(idToDone.done === false){
+              idToDone.done=true;
+              return idToDone;
+            }
+            else{
+              idToDone.done=false;
+              return idToDone;
+            }
+        }
+          else return idToDone;
+      })
+
     // should leave the input argument todos unchanged (you can use cloneArrayOfObjects)
     // in the new todo array, all elements will remain unchanged except the one with id: idToMark
     // this element will have its done value toggled
