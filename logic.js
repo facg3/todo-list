@@ -1,14 +1,3 @@
-//// General form for a task
-////    <li class="task">
-////        <input type="checkbox">
-////        <label>TASK TEXT</label>
-////        <span>
-////             <button class="set-prio">
-////             <button class="edit">
-////             <button class="del">
-////        </span>
-////    </li>
-
 // Part 1. Fill in any missing parts of the todoFunction object!
 // you can access these on todo.todoFunctions
 // For part one we expect you to use tdd
@@ -33,7 +22,6 @@ var todoFunctions = {
       return JSON.parse(JSON.stringify(todo));
     });
   },
-
 
 
   addTodo: function(todos, newTodo) {
@@ -62,6 +50,14 @@ var todoFunctions = {
     return arr2;
   },
   markTodo: function(todos, idToMark) {
+      var newtodos = JSON.parse(JSON.stringify(todos));
+      for(var i=0; i<newtodos.length; i++) {
+          if(newtodos[i].id == idToMark) {
+              newtodos[i].done = !newtodos[i].done;
+              
+      }
+      }
+      return newtodos;
     // should leave the input argument todos unchanged (you can use cloneArrayOfObjects)
     // in the new todo array, all elements will remain unchanged except the one with id: idToMark
     // this element will have its done value toggled
