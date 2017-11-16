@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Simple todo list that adds, deletes, marks as read, modifies and maybe sorts notes.",
   "main": "dom.js",
+  "directories": {
+    "test": "tests"
+  },
   "scripts": {
     "test": "tape ./tests/*.js | tap-spec"
   },
@@ -11,6 +14,8 @@
     "url": "git+https://github.com/facg3/todo-list.git"
   },
   "keywords": [],
+
+
   "author": "",
   "license": "ISC",
   "bugs": {
