@@ -52,7 +52,8 @@ else{return todos;}
     return arr2;
   },
   markTodo: function(todos, idToMark) {
-      return todos.map(function(idToDone){
+      var newtodos = todoFunctions.cloneArrayOfObjects(todos);
+        return newtodos.map(function(idToDone){
         if(idToDone.id === idToMark){
             if(idToDone.done === false){
               idToDone.done=true;
