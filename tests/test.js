@@ -12,7 +12,7 @@ const list = [
 
 
 //testing mark
-test('tape is working', function(t) {
+test('Testing markTodo', function(t) {
   const actual = 1;
   const expected = 1;
 //  t.equals(actual, expected, '1=1');
@@ -55,7 +55,7 @@ test('tape is working', function(t) {
 t.end();
 })
 
-test('tape is working', function(t) {
+test('Testing addTodo', function(t) {
   const actual =   todo.addTodo([], "make tea");
   const expected = [{id: 1,
 		   description: "make tea",
@@ -64,7 +64,7 @@ test('tape is working', function(t) {
   t.end();
 })
 
-test('tape is working', function(t) {
+test('Testing addTodo', function(t) {
   const actual =   todo.addTodo([{id: 1,
 		   description: "make tea",
 		   done: false}], "make coffee");
@@ -79,7 +79,7 @@ test('tape is working', function(t) {
 })
 
 
-test('tape is working', function(t) {
+test('Testing addTodo', function(t) {
   const actual =   todo.addTodo([{id: 1,
 		   description: "make tea",
 		   done: false},
@@ -103,7 +103,7 @@ test('tape is working', function(t) {
 
 //Testing deleteTodo
 
-test('tape is working', function(t) {
+test('Testing deleteTodo', function(t) {
   const actual =   todo.deleteTodo([{id: 1,
 		   description: "make tea",
 		   done: false},
@@ -120,7 +120,7 @@ test('tape is working', function(t) {
 
 
 
-test('tape is working', function(t) {
+test('Testing deleteTodo', function(t) {
   const actual =   todo.deleteTodo([{id: 1,
 		   description: "make tea",
 		   done: false}], 1);
@@ -131,7 +131,7 @@ test('tape is working', function(t) {
 
 
 
-test('tape is working', function(t) {
+test('Testing deleteTodo', function(t) {
   const actual =   todo.deleteTodo([], 1);
   const expected = [];
   t.deepEqual(actual, expected, 'delete nothing, from nothing.');
